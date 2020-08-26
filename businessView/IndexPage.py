@@ -6,8 +6,10 @@
 """
 import time
 
-from baseView.BasePage import Page
+from baseView.BasePage import BasePage
 from selenium.webdriver.common.by import By
+from pageLocator.indexPage_Locators import IndexPageLocator
+
 
 
 class IndexPage(Page):
@@ -22,6 +24,7 @@ class IndexPage(Page):
     hawb_input_loc = (By.ID, 'searchInput')
     search_btn = (By.XPATH, "//div[@class='btn']")
     not_exist_tip = (By.XPATH, '//div/p')
+    no_logistics_tip = (By.XPATH, '//div/p')
 
     def search_shipment(self, hawb):
         self.open()
@@ -56,3 +59,17 @@ class IndexPage(Page):
         :return:
         """
         return self.find_element(*self.loginFail_loc).text
+
+
+# ---------------------------------------------------------使用继承的方式------------------------------------------------
+class IndexPage1(BasePage):
+
+    def search_shipment(self, hwab):
+        """
+        搜寻分单功能
+        :param hwab:
+        :return:
+        """
+        exp = "Index界面中未登录状态下搜索分单功能"
+        self.wait_eleVisible(IndexPageLocator['hawb_input_loc'])
+

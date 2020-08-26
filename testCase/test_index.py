@@ -14,19 +14,64 @@ from time import sleep
 import unittest
 from logging_handler import logging
 import os
-from ddt import ddt, data, unpack
+import ddt
 from data.Index import Tip_Shipment
+from common.get_driver import driver
+from common.config_handler import config_data
 
 root_dir = os.path.dirname(os.path.dirname(__file__))
 screenshots_dir = '/'.join((root_dir, 'reports', 'screenShots'))
 
 
-class IndexTest(StartEnd):
+@ddt.ddt
+class IndexTest(unittest.TestCase):
+    """
+    在setUp()和tearDown()方法中设置打开和关闭浏览器（进程）能够实现测试用例之间的隔离性
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        """
+        类方法需要在方法前面加上@classmethod装饰器说明，要不然会报错
+        可以实现功能如下: 通过excel读取本功能中需要的所有的测试数据
+
+        :return:
+        """
+        print("==========测试用例执行之前，setUpClass,整个测试类只执行一次==========")
+        cls.driver = driver
+        cls.driver.get(config_data['Server']['base_url'])
+        cls.login_page = cls.(cls.driver)
+
+    @classmethod
+    def tearDownClass(cls):
+        """
+        在测试类执行完毕后，关掉浏览器进程
+        :return:
+        """
+        print("==========测试用例执行之前，tearDownClass,整个测试类只执行一次==========")
+        cls.driver.quit()
+
+    def setUp(self):
+        """
+        每个测试用例的前置条件
+        :return:
+        """
+        pass
+
+    def tearDown(self):
+        """
+        每个测试用例的后置条件
+        :return:
+        """
+        self.driver.refresh()
+
+
+class IndexTest1(StartEnd):
     """
     页面登陆
     """
 
-    @data(*Tip_Shipment)
+    @ddt.data(*Tip_Shipment)
     def test_search_shipment(self, ship):
         """search shipment"""
         logging.info("---------------------------test Index Page begin------------------------------------")

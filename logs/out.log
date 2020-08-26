@@ -1,53 +1,8 @@
-2020-08-25 16:30:38,424 run_test.py[line:19] INFO ======Start to test=====
-2020-08-25 16:30:43,924 test_index.py[line:43] INFO =====test Index Page begin=====
-2020-08-25 16:30:43,924 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:30:43,933 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:31:17,885 test_index.py[line:54] INFO =====test hawb dasd23213124543 exist but does not have logistics information=====
-2020-08-25 16:36:42,856 run_test.py[line:19] INFO ======Start to test=====
-2020-08-25 16:36:48,281 test_index.py[line:43] INFO =====test Index Page begin=====
-2020-08-25 16:36:48,282 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:36:48,287 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:37:06,053 test_index.py[line:54] INFO =====test hawb dasd23213124543 exist but does not have logistics information=====
-
-2020-08-25 16:39:12,777 run_test.py[line:19] INFO ======Start to test=====
-2020-08-25 16:39:18,214 test_index.py[line:43] INFO =====test Index Page begin=====
-2020-08-25 16:39:18,214 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:39:18,217 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:39:40,092 test_index.py[line:54] INFO =====test hawb dasd23213124543 exist but does not have logistics information=====
-
-
-2020-08-25 16:40:56,139 run_test.py[line:19] INFO ======Start to test=====
-2020-08-25 16:41:01,542 test_index.py[line:28] INFO =====test Index Page begin=====
-2020-08-25 16:41:01,542 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:41:01,548 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:41:26,498 test_index.py[line:39] INFO =====test hawb dasd23213124543 not exist end=====
-2020-08-25 16:44:56,848 test_index.py[line:28] INFO =====test Index Page begin=====
-2020-08-25 16:44:56,849 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:44:56,852 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:45:24,388 test_index.py[line:39] INFO =====test hawb dasd23213124543 not exist end=====
-2020-08-25 16:51:26,394 test_index.py[line:30] INFO =====test Index Page begin=====
-2020-08-25 16:51:26,394 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:51:26,399 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:51:57,109 test_index.py[line:41] INFO =====test hawb dasd23213124543 not exist end=====
-2020-08-25 16:53:18,187 test_index.py[line:46] INFO =====test Index Page begin=====
-2020-08-25 16:53:18,187 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:53:18,191 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:53:47,196 test_index.py[line:58] INFO =====test hawb SZXTS2008022 exist but does not have logistics information=====
-2020-08-25 16:55:03,474 test_index.py[line:30] INFO =====test Index Page begin=====
-2020-08-25 16:55:03,474 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:55:03,477 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 16:55:31,384 test_index.py[line:41] INFO =====test hawb dasd23213124543 not exist end=====
-2020-08-25 17:00:25,982 run_test.py[line:19] INFO ======Start to test=====
-2020-08-25 17:00:31,482 test_index.py[line:30] INFO =====test Index Page begin=====
-2020-08-25 17:00:31,482 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 17:00:31,487 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 17:01:02,831 test_index.py[line:41] INFO =====test hawb dasd23213124543 not exist end=====
-2020-08-25 17:01:06,855 test_index.py[line:46] INFO =====test Index Page begin=====
-2020-08-25 17:01:06,855 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 17:01:06,860 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 17:01:14,748 test_index.py[line:58] INFO =====test hawb SZXTS2008022 exist but does not have logistics information=====
-2020-08-25 17:03:12,427 run_test.py[line:19] INFO ======Start to test=====
-2020-08-25 17:03:17,888 test_index.py[line:30] INFO =====test Index Page begin=====
-2020-08-25 17:03:17,889 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 17:03:17,896 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-25 17:03:38,793 test_index.py[line:41] INFO =====test hawb dasd23213124543 not exist end=====
+2020-08-26 10:57:04,226 test_index.py[line:33] INFO ---------------------------test Index Page begin------------------------------------
+2020-08-26 10:57:04,227 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
+2020-08-26 10:57:04,231 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
+2020-08-26 10:57:27,599 test_index.py[line:44] INFO =====test hawb dasd23213124543' tip is This shipment doesn¡¯t exist=====
+2020-08-26 10:57:30,257 test_index.py[line:33] INFO ---------------------------test Index Page begin------------------------------------
+2020-08-26 10:57:30,258 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
+2020-08-26 10:57:30,270 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
+2020-08-26 10:57:35,172 test_index.py[line:44] INFO =====test hawb LAXTS01695' tip is No logistics information for this shipment yet=====
