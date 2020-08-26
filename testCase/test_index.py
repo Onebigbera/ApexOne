@@ -27,7 +27,7 @@ class IndexTest(StartEnd):
     """
 
     @data(*Tip_Shipment)
-    def test_search_shipment(self,ship):
+    def test_search_shipment(self, ship):
         """search shipment"""
         logging.info("---------------------------test Index Page begin------------------------------------")
         # print("test_login1_normal is start run...")
