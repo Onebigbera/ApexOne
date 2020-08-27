@@ -8,11 +8,13 @@ import time
 
 from baseView.BasePage import BasePage
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.webdriver.support.wait import WebDriverWait
 from pageLocator.indexPage_Locators import IndexPageLocator
 
 
-
-class IndexPage(Page):
+class IndexPage(BasePage):
     """
     首页登陆页面相关的类-继承页面基类
     """
@@ -71,5 +73,37 @@ class IndexPage1(BasePage):
         :return:
         """
         exp = "Index界面中未登录状态下搜索分单功能"
-        self.wait_eleVisible(IndexPageLocator['hawb_input_loc'])
+        self.wait_eleVisible(IndexPageLocator.hawb_input_loc)
+        self.clear_input(IndexPageLocator.hawb_input_loc,exp=None)
+        self.input_text(IndexPageLocator.hawb_input_loc, hwab, exp='search hawb')
+        self.click_element(IndexPageLocator.search_btn, exp='locate search button')
 
+    def get_tip_mes_not_exist(self):
+        """
+        当输入航班信息不存在或者航班物流信息不存在时，系统会给出对应的提示信息
+        :return:
+        """
+        # WebDriverWait(self.driver, 20).until(
+        #     EC.visibility_of_element_located((By.XPATH, '//div[@class="form-error-info"]')))
+        # return self.driver.find_element_by_xpath('//div[@class="form-error-info"]')
+
+        # 此处要求传入的就是元组，不需要解包，所以不需要使用*
+        WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located(IndexPageLocator.not_exist_tip))
+        # 此处中要求传入值为元组中的元素，需要使用*进行解包
+        return self.get_text(IndexPageLocator.not_exist_tip)
+
+    def get_tip_mes_no_logistic(self):
+        """
+        当输入航班信息不存在或者航班物流信息不存在时，系统会给出对应的提示信息
+        :return:
+        """
+        # WebDriverWait(self.driver, 20).until(
+        #     EC.visibility_of_element_located((By.XPATH, '//div[@class="form-error-info"]')))
+        # return self.driver.find_element_by_xpath('//div[@class="form-error-info"]')
+
+        # 此处要求传入的就是元组，不需要解包，所以不需要使用*
+        WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located(IndexPageLocator.no_logistics_tip))
+        # 此处中要求传入值为元组中的元素，需要使用*进行解包
+        return self.get_text(IndexPageLocator.no_logistics_tip)

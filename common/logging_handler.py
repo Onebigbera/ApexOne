@@ -12,4 +12,4 @@ config_path = '/'.join((root_dir, 'config', 'log.conf'))
 # 实例化 logging
 CON_LOG = config_path
 logging.config.fileConfig(CON_LOG)
-logging = logging.getLogger()
+logger = logging.getLogger()

@@ -1,8 +1,0 @@
-2020-08-26 10:57:04,226 test_index.py[line:33] INFO ---------------------------test Index Page begin------------------------------------
-2020-08-26 10:57:04,227 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-26 10:57:04,231 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-26 10:57:27,599 test_index.py[line:44] INFO =====test hawb dasd23213124543' tip is This shipment doesn¡¯t exist=====
-2020-08-26 10:57:30,257 test_index.py[line:33] INFO ---------------------------test Index Page begin------------------------------------
-2020-08-26 10:57:30,258 BasePage.py[line:40] INFO =====Now test url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-26 10:57:30,270 BasePage.py[line:43] INFO =====Now try to maxsize page and url is https://apexone.apexglobe.com/home?redirect=%2Fdashboard=====
-2020-08-26 10:57:35,172 test_index.py[line:44] INFO =====test hawb LAXTS01695' tip is No logistics information for this shipment yet=====

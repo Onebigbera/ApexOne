@@ -5,7 +5,9 @@
         优化调整：可以将函数中用到的重复部分使用装饰器进行优化
 """
 import time
-from common.logging_hander_single_instance import logger
+# from common.logging_hander_single_instance import logger
+# from common.Logging_Optimiser import logger
+from common.logging_handler import logger
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

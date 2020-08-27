@@ -7,7 +7,8 @@ import os
 
 root_dir = os.path.dirname(os.path.dirname(__file__))
 log_dir = '/'.join((root_dir, 'logs'))
-logger_path = '/'.join((log_dir, 'logger.log'))
+# logger_path = '/'.join((log_dir, 'logger.log'))
+logger_path = r'E:\Auto_Test\Apex_One\logs\logger.log'
 
 
 class Log(object):
