@@ -39,6 +39,7 @@ class IndexTest(unittest.TestCase):
 
         :return:
         """
+        logger.info("====**************************======TestCase Begin分隔符======*************************************====")
         logger.info("==========测试用例执行之前，setUpClass,整个测试类只执行一次==========")
         cls.driver = driver
         cls.driver.get(config_data['Server']['base_url'])
@@ -51,6 +52,7 @@ class IndexTest(unittest.TestCase):
         :return:
         """
         logger.info("==========测试用例执行之前，tearDownClass,整个测试类只执行一次==========")
+        logger.info("====**********************************======TestCase End分隔符======********************************====")
         cls.driver.quit()
 
     def setUp(self):
