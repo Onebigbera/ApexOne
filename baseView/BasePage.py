@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 """
-    页面基类  所有业务页面的父类，封装一些页面的公用方法
-        日志记录、异常处理、截图、元素定位、元素文本获取、元素属性获取等
+    页面基类  所有业务页面的父类，封装一些页面的公用方法包含但是不仅限于:
+        日志记录、异常处理、截图、元素定位、元素文本获取、元素属性获取、点击元素等
         优化调整：可以将函数中用到的重复部分使用装饰器进行优化
 """
 import time
@@ -29,10 +29,10 @@ class BasePage(object):
 
     def wait_eleVisible(self, locator, time=30, poll_frequency=0.5, exp=""):
         """
-        在页面基类中完成页面异常处理，每遇到异常必须完成截图、日志记录的操作
-        :param locator:
-        :param time:
-        :param poll_frequency:
+        等待元素页面可见
+        :param locator:元素定位器
+        :param time:等待总周期
+        :param poll_frequency:检查频率，没0.5s检查一次
         :param exp:文档说明，方便记录
         :return:
         """
@@ -49,12 +49,33 @@ class BasePage(object):
             self.save_screenshot(exp)
             raise e
 
-    def wait_elePresence(self):
-        """等待元素在页面上呈现"""
-        pass
+    def wait_elePresent(self, locator, time=30, poll_frequency=0.5, exp=""):
+        """
+        等待元素页面呈现
+        :param locator:元素定位器
+        :param time:等待总周期
+        :param poll_frequency:检查频率，没0.5s检查一次
+        :param exp:文档说明，方便记录
+        :return:
+        """
+        logger.info("等待元素{}可见".format(locator))
+        try:
+            start = datetime.datetime.now()
+            WebDriverWait(self.driver, time, poll_frequency).until(EC.presence_of_element_located(locator))
+            end = datetime.datetime.now()
+            during_period = end - start
+            logger.info("等待时长为:{}".format(during_period))
+        except BaseException as e:
+            # logger.info("The exception is {}".format(e))
+            logger.exception(e)
+            self.save_screenshot(exp)
+            raise e
 
     def get_element(self, locator, exp=''):
-        """元素获取"""
+        """
+            元素获取
+            在参数中使用args,在函数中使用*args，会将args进行解包，比如如果args为(By.ID, 'searchInput')，那么使用*args就会将元组解包,脱掉外衣
+        """
         logger.info("查找元素：{}".format(locator))
         try:
             self.driver.find_element(*locator)

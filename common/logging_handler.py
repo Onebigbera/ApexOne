@@ -13,3 +13,4 @@ config_path = '/'.join((root_dir, 'config', 'log.conf'))
 CON_LOG = config_path
 logging.config.fileConfig(CON_LOG)
 logger = logging.getLogger()
+

@@ -9,13 +9,13 @@ import time
 
 from baseView.myunit import StartEnd
 from functionG import insert_img
-from businessView.IndexPage import IndexPage1
+from businessView.IndexPage import IndexPage
 from time import sleep
 import unittest
 from logging_handler import logging
 import os
 import ddt
-from data.Index import shipment_not_exist
+from data.Index import shipment_not_exist, shipment_no_logistic
 from common.get_driver import driver
 from common.config_handler import config_data
 from pageLocator.indexPage_Locators import IndexPageLocator
@@ -39,11 +39,11 @@ class IndexTest(unittest.TestCase):
 
         :return:
         """
-        logger.info("====**************************======TestCase Begin分隔符======*************************************====")
+        logger.info("====**********************======TestCase Begin分隔符======*********************************====")
         logger.info("==========测试用例执行之前，setUpClass,整个测试类只执行一次==========")
         cls.driver = driver
         cls.driver.get(config_data['Server']['base_url'])
-        cls.index_page = IndexPage1(cls.driver)
+        cls.index_page = IndexPage(cls.driver)
 
     @classmethod
     def tearDownClass(cls):
@@ -52,7 +52,7 @@ class IndexTest(unittest.TestCase):
         :return:
         """
         logger.info("==========测试用例执行之前，tearDownClass,整个测试类只执行一次==========")
-        logger.info("====**********************************======TestCase End分隔符======********************************====")
+        logger.info("====********************************======TestCase End分隔符======**************************====")
         cls.driver.quit()
 
     def setUp(self):
@@ -70,7 +70,7 @@ class IndexTest(unittest.TestCase):
         self.driver.refresh()
 
     @ddt.data(*shipment_not_exist)
-    def test_search_hawb(self, index_data):
+    def test_search_hawb_not_exist(self, index_data):
         """
         分单不存在的数据都放执行此测试用例
         :return:
@@ -79,62 +79,15 @@ class IndexTest(unittest.TestCase):
         self.assertEqual(self.index_page.get_tip_mes_not_exist(), index_data['tip'])
         time.sleep(3)
 
-
-# class IndexTest1(StartEnd):
-#     """
-#     页面登陆
-#     """
-#
-#     @ddt.data(*shipment_not_exist)
-#     def test_search_shipment(self, ship):
-#         """search shipment"""
-#         logging.info("---------------------------test Index Page begin------------------------------------")
-#         # print("test_login1_normal is start run...")
-#         po = IndexPage1(self.driver)
-#         po.search_shipment(ship['hawb'])
-#         sleep(2)
-#         self.driver.get_screenshot_as_file(screenshots_dir + "\\test1.png")
-#
-#         # 断言与截屏
-#         self.assertEqual(po.get_tip_msg(), ship['tip'])
-#         # 截图失败
-#         # insert_img(self.driver, "login_normal.png")
-#         logging.info("=====test hawb {}' tip is {}=====".format(ship['hawb'], ship['tip']))
-#         time.sleep(2)
-
-# @unittest.skip("Just skip...")
-# def test_01_search_shipment_not_exist(self):
-#     """hwab shipment doesn't exist"""
-#     logging.info("---------------------------test Index Page begin------------------------------------")
-#     # print("test_login1_normal is start run...")
-#     po = IndexPage(self.driver)
-#     po.search_shipment("dasd23213124543")
-#     sleep(2)
-#     self.driver.get_screenshot_as_file(screenshots_dir + "\\test1.png")
-#
-#     # 断言与截屏
-#     self.assertEqual(po.get_tip_msg(), "This shipment doesn’t exist")
-#     # 截图失败
-#     # insert_img(self.driver, "login_normal.png")
-#     logging.info("=====test hawb {hawb} not exist end=====".format(hawb="dasd23213124543"))
-#     time.sleep(2)
-
-# def test_02_search_shipment__no_logistics(self):
-#     """hwab shipment doesn't exist"""
-#     logging.info("=====test Index Page begin=====")
-#     # print("test_login1_normal is start run...")
-#     po = IndexPage(self.driver)
-#     po.search_shipment("SZXTS2008022")
-#     sleep(2)
-#     self.driver.get_screenshot_as_file(screenshots_dir + "\\test2.png")
-#
-#     # 断言与截屏
-#     self.assertEqual(po.get_tip_msg(), "No logistics information for this shipment yet")
-#     time.sleep(2)
-#     # 截图失败
-#     # insert_img(self.driver, "login_normal.png")
-#     logging.info(
-#         "=====test hawb {hawb} exist but does not have logistics information=====".format(hawb="SZXTS2008022"))
+    @ddt.data(*shipment_no_logistic)
+    def test_search_hawb_no_logistic(self, index_data):
+        """
+        分单不存在的数据都放执行此测试用例
+        :return:
+        """
+        self.index_page.search_shipment(index_data['hawb'])
+        self.assertEqual(self.index_page.get_tip_mes_no_logistic(), index_data['tip'])
+        time.sleep(3)
 
 
 if __name__ == "__main__":

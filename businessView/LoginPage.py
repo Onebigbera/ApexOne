@@ -5,11 +5,11 @@
     定位器封装
 """
 
-from baseView.BasePage import Page
+from baseView.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
 
-class LoginPage(Page):
+class LoginPage(BasePage):
     """
     首页登陆页面相关的类-继承页面基类
     """

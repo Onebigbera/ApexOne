@@ -11,3 +11,6 @@ class IndexPageLocator(object):
     search_btn = (By.XPATH, "//div[@class='btn']")
     not_exist_tip = (By.XPATH, '//div/p')
     no_logistics_tip = (By.XPATH, '//div/p')
+
+    SLA_Date = (By.XPATH, "//div[@class='sla-date']/span")
+
