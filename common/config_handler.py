@@ -32,6 +32,7 @@ def get_config_data():
 
     # 读取服务器信息
     base_url = config.get('server', 'url')
+    search_url = config.get('server', 'hawb_search')
 
     config_db = {
         'host': host,
@@ -51,7 +52,8 @@ def get_config_data():
     }
 
     config_server = {
-        'base_url': base_url
+        'base_url': base_url,
+        'search_url': search_url
     }
     config_data_dict = {'DB': config_db, 'Email': config_email, 'Server': config_server}
 

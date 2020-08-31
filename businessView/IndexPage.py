@@ -11,6 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from pageLocator.indexPage_Locators import IndexPageLocator
+import requests, json
 
 
 class IndexPage(BasePage):
@@ -55,4 +56,20 @@ class IndexPage(BasePage):
         exp = "核对已经存在的分单基本信息"
         self.search_shipment(hawb)
 
+
+class GetDetail(object):
+    """
+    当分单存在物流信息时，使用request库解析得到Index界面中展示的数据
+    """
+
+    def __init__(self, hwab):
+        """
+            hawb:分单号
+        """
+        self.hawb = hwab
+
+    def get_result(self):
+        """
+        获取接口信息
+        """
 

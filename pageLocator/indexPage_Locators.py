@@ -13,4 +13,7 @@ class IndexPageLocator(object):
     no_logistics_tip = (By.XPATH, '//div/p')
 
     SLA_Date = (By.XPATH, "//div[@class='sla-date']/span")
-
+    consignee = (By.XPATH, '//div[@class="result"]/div[@class="time-line"]/div[@class="step active"][1]/div[1]')
+    podCode = (By.XPATH, '//div[@class="result"]/div[@class="time-line"]/div[@class="step active"][2]/div[1]')
+    polCode = (By.XPATH, '//div[@class="result"]/div[@class="time-line"]/div[@class="step active"][3]/div[1]')
+    shipper = (By.XPATH, '//div[@class="result"]/div[@class="time-line"]/div[@class="step"]/div[1]')

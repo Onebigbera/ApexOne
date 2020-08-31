@@ -20,6 +20,7 @@ from common.get_driver import driver
 from common.config_handler import config_data
 from pageLocator.indexPage_Locators import IndexPageLocator
 from common.logging_handler import logger
+import requests, json
 
 root_dir = os.path.dirname(os.path.dirname(__file__))
 screenshots_dir = '/'.join((root_dir, 'reports', 'screenShots'))
@@ -88,6 +89,13 @@ class IndexTest(unittest.TestCase):
         self.index_page.search_shipment(index_data['hawb'])
         self.assertEqual(self.index_page.get_tip_mes_no_logistic(), index_data['tip'])
         time.sleep(3)
+
+
+class IndexDetail(unittest.TestCase):
+    def setUpClass(cls):
+        data = {'hawbNo':'LAXTS01677'}
+        detail_info = requests.post(config_data['Server']['search_url'], data=data,verify=False)
+
 
 
 if __name__ == "__main__":
