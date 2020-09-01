@@ -15,12 +15,13 @@ import unittest
 from logging_handler import logging
 import os
 import ddt
-from data.Index import shipment_not_exist, shipment_no_logistic
+from data.Index import shipment_not_exist, shipment_no_logistic, shipment_exist
 from common.get_driver import driver
 from common.config_handler import config_data
 from pageLocator.indexPage_Locators import IndexPageLocator
 from common.logging_handler import logger
 import requests, json
+from common.db_hander import DbMySQL
 
 root_dir = os.path.dirname(os.path.dirname(__file__))
 screenshots_dir = '/'.join((root_dir, 'reports', 'screenShots'))
@@ -91,10 +92,6 @@ class IndexTest(unittest.TestCase):
         time.sleep(3)
 
 
-class IndexDetail(unittest.TestCase):
-    def setUpClass(cls):
-        data = {'hawbNo':'LAXTS01677'}
-        detail_info = requests.post(config_data['Server']['search_url'], data=data,verify=False)
 
 
 

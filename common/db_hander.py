@@ -54,8 +54,10 @@ class DbMySQL(object):
 if __name__ == "__main__":
     db_uat = DbMySQL()
     # sql = "select sla_date,ata,pod_name,pod_code,pol_name,pol_code,atd,shipper_city,cargo_received_time from t_shipment_house where house_no='LAXTS01551';"
-    sql = "select DATE_FORMAT(sla_date,'%b %d, %Y %I:%i %p') from t_shipment_house where house_no='LAXTS01551';"
+    sql = "select DATE_FORMAT(ata,'%b %d, %Y %I:%i %p') from t_shipment_house where house_no='LAXTS01677';"
     result = db_uat.select_data(sql)
+    print(result)
+    print(result[0])
     print(type(result[0]))
 
 

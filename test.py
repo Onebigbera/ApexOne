@@ -16,8 +16,10 @@ if json_data:
     detaiL_data = json_data['data']
     print(detaiL_data)
     # 公司详情id
-    consignee = detaiL_data['consignee']
-    print("---公司详情id---", consignee)
+    ata = detaiL_data['ata']
+    print(ata)
+    print(type(ata))
+
     # # 资质数量
     # zizhiNum = detaiL_data['comQual']
     # regPersonNum = detaiL_data['regPersonNum']

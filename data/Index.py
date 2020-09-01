@@ -20,3 +20,7 @@ shipment_not_exist = [
 shipment_no_logistic = [
     {'hawb': 'dasd23213124543', 'tip': 'No logistics information for this shipment yet'}
 ]
+
+shipment_exist = [
+    {'hawb', 'LAXTS01677'}
+]
