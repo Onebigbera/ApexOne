@@ -22,5 +22,9 @@ shipment_no_logistic = [
 ]
 
 shipment_exist = [
-    {'hawb', 'LAXTS01677'}
+    {'hawb': 'LAXTS01677'},
+    {'hawb': 'LAXTS01677'}
+
 ]
+
+print(shipment_exist[0]['hawb'])

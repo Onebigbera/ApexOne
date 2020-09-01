@@ -45,10 +45,15 @@ class DbMySQL(object):
         try:
             cursor.execute(sql)
             result = self.cursor.fetchone()
-            print(result)
+            # print(result)
+            self.close()
             return result
+
         except AttributeError:
             logger.error("************数据库未连接，请连接上数据库再查询************")
+
+    def close(self):
+        self.cursor.close()
 
 
 if __name__ == "__main__":
@@ -59,5 +64,3 @@ if __name__ == "__main__":
     print(result)
     print(result[0])
     print(type(result[0]))
-
-
